@@ -26,7 +26,28 @@
 // });
 
 
+
+
+
+// const pirateTags = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li'];
+
+// const translateToPirateSpeak = async (text) => {
+//   const url = `https://pirate.monkeyness.com/api/translate?english=${encodeURIComponent(text)}`;
+//   console.log(url)
+//   const response = await fetch(url);
+//   console.log(response.text())
+//   return await response.text();
+// };
+
+// pirateTags.forEach(tag => {
+//   const elements = document.querySelectorAll(tag);
+//   elements.forEach(async el => {
+//     el.textContent = await translateToPirateSpeak(el.textContent);
+//   });
+// });
+
 const textTags = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'a', 'span', 'td', 'th', 'i', 'strong', 'div', 'body']
+
 textTags.forEach( tag => {
   const text = document.querySelectorAll(tag)
   text.forEach(el => {
@@ -51,8 +72,8 @@ const pirateMusic = document.createElement('source');
 pirateMusic.setAttribute('src', "https://cdn.pixabay.com/download/audio/2023/09/24/audio_70e3d3e84e.mp3?filename=pirate-tavern-full-version-167990.mp3");
 pirateMusic.setAttribute('type', 'audio/mp3');
 musicPlayer.appendChild(pirateMusic)
-console.log('piratemusic: ', pirateMusic);
-console.log('musicplayer: ', musicPlayer);
+// console.log('piratemusic: ', pirateMusic);
+// console.log('musicplayer: ', musicPlayer);
 
 document.addEventListener('click', function () {
     musicPlayer.play();
@@ -64,6 +85,7 @@ document.addEventListener('click', function () {
 <audio controls autoplay>
   <source src="horse.ogg" type="audio/ogg">
   "https://cdn.pixabay.com/download/audio/2023/09/24/audio_70e3d3e84e.mp3?filename=pirate-tavern-full-version-167990.mp3"
+  https://cdn.pixabay.com/download/audio/2023/09/24/audio_70e3d3e84e.mp3?filename=pirate-tavern-full-version-167990.mp3
 */
 
 
