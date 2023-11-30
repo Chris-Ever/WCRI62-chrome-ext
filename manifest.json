@@ -1,8 +1,8 @@
 {
-    "manifest_version": 1,
-    "name": "CE AB extension tbd",
+    "manifest_version": 3,
+    "name": "Yarrrify",
     "version": "1.0",
-    "description": "we'll see",
+    "description": "Ye'll see",
     "content_scripts": [
       {
         "js": ["scripts/content.js"],
