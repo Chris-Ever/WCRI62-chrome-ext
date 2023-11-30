@@ -2,5 +2,14 @@
     "manifest_version": 1,
     "name": "CE AB extension tbd",
     "version": "1.0",
-    "description": "we'll see"
+    "description": "we'll see",
+    "content_scripts": [
+      {
+        "js": ["scripts/content.js"],
+        "matches": [
+          "<all_urls>"
+        ]
+      }
+    ],
+
   }
