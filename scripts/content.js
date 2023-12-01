@@ -28,23 +28,46 @@
 
 
 
+const pirateTags = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li'];
 
-// const pirateTags = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li'];
+function translateToPirateSpeak(text) {
+    const translations = [
+        { regex: /\byour\b/gi, translation: "yer" },
+        { regex: /\byou\b/gi, translation: "ye" },
+        { regex: /\bare\b/gi, translation: "be" },
+        { regex: /\bfriend\b/gi, translation: "matey" },
+        { regex: /\bhello\b/gi, translation: "ahoy" },
+        { regex: /\bmy\b/gi, translation: "me" },
+        { regex: /\bis\b/gi, translation: "be" },
+        { regex: /\bher\b/gi, translation: "'er" },
+        { regex: /\b(their|there)\b/gi, translation: "tharr" },
+        { regex: /\bour\b/gi, translation: "arr" },
+        { regex: /\band\b/gi, translation: "'n'" },
+        { regex: /\bfor\b/gi, translation: "fer" },
+        { regex: /\bof\b/gi, translation: "o'" },
+        { regex: /\bover\b/gi, translation: "o'er" },
+        { regex: /\bhis\b/gi, translation: "'is" },
+        { regex: /\bthose\b/gi, translation: "them" },
+        { regex: /\bto\b/gi, translation: "t'" },
+        { regex: /\b(thank you|thanks)\b/gi, translation: "thankee" },
+        { regex: /\b(man|boy)\b/gi, translation: "lad" },
+        { regex: /\b(woman|girl)\b/gi, translation: "lass" },
+        { regex: /\b(people|children|men|women|guys|folks|crowd)\b/gi, translation: "scallywags" },
+        { regex: /\b(money|cash|payment)\b/gi, translation: "booty" },
+        { regex: /\b(\w+)ing\b/gi, translation: "$1in'" }
+    ];
+    translations.forEach(({ regex, translation }) => {
+        text = text.replaceAll(regex, translation);
+    });
+    return text;
+}
 
-// const translateToPirateSpeak = async (text) => {
-//   const url = `https://pirate.monkeyness.com/api/translate?english=${encodeURIComponent(text)}`;
-//   console.log(url)
-//   const response = await fetch(url);
-//   console.log(response.text())
-//   return await response.text();
-// };
-
-// pirateTags.forEach(tag => {
-//   const elements = document.querySelectorAll(tag);
-//   elements.forEach(async el => {
-//     el.textContent = await translateToPirateSpeak(el.textContent);
-//   });
-// });
+pirateTags.forEach(tag => {
+    const elements = document.querySelectorAll(tag);
+    elements.forEach(el => {
+        el.textContent = translateToPirateSpeak(el.textContent);
+    });
+});
 
 const textTags = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'a', 'span', 'td', 'th', 'i', 'strong', 'div', 'body']
 
